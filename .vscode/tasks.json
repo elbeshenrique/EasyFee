@@ -1,0 +1,104 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+            "label": "build-taxajuros",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build-taxajuros",
+                "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build-taxajuros: debug",
+            "dependsOn": [
+                "build-taxajuros"
+            ],
+            "dockerBuild": {
+                "tag": "jurosfacil-taxajuros:dev",
+                "target": "base",
+                "dockerfile": "${workspaceFolder}/TaxaJuros/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj"
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run-taxajuros: debug",
+            "dependsOn": [
+                "docker-build-taxajuros: debug"
+            ],
+            "dockerRun": {
+                "envFiles": [
+                    ".env"
+                ],
+                "network": "jurosfacil_default",
+                "ports": [{
+                        "hostPort": 6000,
+                        "containerPort": 6000
+                    },
+                    {
+                        "hostPort": 6001,
+                        "containerPort": 6001
+                    }
+                ]
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj",
+                "enableDebugging": true,
+                "configureSsl": true
+            }
+        },
+
+
+
+        {
+            "label": "build-calculajuros",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build-calculajuros",
+                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build-calculajuros: debug",
+            "dependsOn": [
+                "build-calculajuros"
+            ],
+            "dockerBuild": {
+                "tag": "jurosfacil-calculajuros:dev",
+                "target": "base",
+                "dockerfile": "${workspaceFolder}/CalulaJuros/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj"
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run-calculajuros: debug",
+            "dependsOn": [
+                "docker-build-calculajuros: debug"
+            ],
+            "dockerRun": {},
+            "netCore": {
+                "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "enableDebugging": true
+            }
+        }
+    ]
+}

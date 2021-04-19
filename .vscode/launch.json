@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Docker TaxaJuros",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "netCore": {
+                "appProject": "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj"
+            }
+        },
+        {
+            "name": "Docker CalculaJuros",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "netCore": {
+                "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj"
+            }
+        }
+    ]
+}
