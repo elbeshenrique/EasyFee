@@ -1,6 +1,6 @@
 using System;
 
-namespace CalulaJuros.Domain.Exceptions
+namespace CalculaJuros.Domain.Exceptions
 {
     public class CoreException : Exception
     {

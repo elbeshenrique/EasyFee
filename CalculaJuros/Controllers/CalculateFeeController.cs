@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
-using CalulaJuros.Domain.Usecases;
+using CalculaJuros.Domain.Usecases;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CalulaJuros.Controllers
+namespace CalculaJuros.Controllers
 {
     [Route("calculajuros")]
     [ApiController]

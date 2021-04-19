@@ -6,9 +6,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/CalulaJuros/bin/Debug/net5.0/CalulaJuros.dll",
+            "program": "${workspaceFolder}/CalculaJuros/bin/Debug/net5.0/CalculaJuros.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/CalulaJuros",
+            "cwd": "${workspaceFolder}/CalculaJuros",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
@@ -32,7 +32,7 @@
             "request": "launch",
             "preLaunchTask": "docker-run-calculajuros: debug",
             "netCore": {
-                "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj"
+                "appProject": "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj"
             }
         }
     ]

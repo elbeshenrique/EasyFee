@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJuros", "TaxaJuros\Taxa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJuros.Tests", "TaxaJuros.Tests\TaxaJuros.Tests.csproj", "{82AD2AB5-3083-4E7F-8B26-F0DCE55EC4C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalulaJuros", "CalulaJuros\CalulaJuros.csproj", "{F0AAFC46-B719-46FD-AA0C-784B13314E6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculaJuros", "CalculaJuros\CalculaJuros.csproj", "{F0AAFC46-B719-46FD-AA0C-784B13314E6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculaJuros.Tests", "CalculaJuros.Tests\CalculaJuros.Tests.csproj", "{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,5 +60,17 @@ Global
 		{F0AAFC46-B719-46FD-AA0C-784B13314E6B}.Release|x64.Build.0 = Release|Any CPU
 		{F0AAFC46-B719-46FD-AA0C-784B13314E6B}.Release|x86.ActiveCfg = Release|Any CPU
 		{F0AAFC46-B719-46FD-AA0C-784B13314E6B}.Release|x86.Build.0 = Release|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Debug|x64.Build.0 = Debug|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Debug|x86.Build.0 = Debug|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Release|x64.ActiveCfg = Release|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Release|x64.Build.0 = Release|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{1A5CC8C5-CEC2-4A0E-BD03-FF5C8DB915C8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

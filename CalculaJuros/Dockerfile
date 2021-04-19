@@ -12,16 +12,16 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["CalulaJuros/CalulaJuros.csproj", "CalulaJuros/"]
-RUN dotnet restore "CalulaJuros/CalulaJuros.csproj"
+COPY ["CalculaJuros/CalculaJuros.csproj", "CalculaJuros/"]
+RUN dotnet restore "CalculaJuros/CalculaJuros.csproj"
 COPY . .
-WORKDIR "/src/CalulaJuros"
-RUN dotnet build "CalulaJuros.csproj" -c Release -o /app/build
+WORKDIR "/src/CalculaJuros"
+RUN dotnet build "CalculaJuros.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CalulaJuros.csproj" -c Release -o /app/publish
+RUN dotnet publish "CalculaJuros.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CalulaJuros.dll"]
+ENTRYPOINT ["dotnet", "CalculaJuros.dll"]

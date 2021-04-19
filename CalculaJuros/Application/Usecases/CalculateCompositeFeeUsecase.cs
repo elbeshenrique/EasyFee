@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using CalulaJuros.Domain.Exceptions;
-using CalulaJuros.Domain.Services;
-using CalulaJuros.Domain.Usecases;
+using CalculaJuros.Domain.Exceptions;
+using CalculaJuros.Domain.Services;
+using CalculaJuros.Domain.Usecases;
 
-namespace CalulaJuros.Usecases
+namespace CalculaJuros.Usecases
 {
     public class CalculateCompositeFeeUsecase : ICalculateFeeUsecase
     {

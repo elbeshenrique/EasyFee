@@ -61,7 +61,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -76,12 +76,12 @@
             "dockerBuild": {
                 "tag": "jurosfacil-calculajuros:dev",
                 "target": "base",
-                "dockerfile": "${workspaceFolder}/CalulaJuros/Dockerfile",
+                "dockerfile": "${workspaceFolder}/CalculaJuros/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj"
+                "appProject": "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj"
             }
         },
         {
@@ -102,7 +102,7 @@
                 ]
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "appProject": "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
                 "enableDebugging": true
             }
         },
@@ -112,7 +112,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -124,7 +124,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -137,7 +137,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

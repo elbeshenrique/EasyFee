@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace CalulaJuros.Domain.Services
+namespace CalculaJuros.Domain.Services
 {
     public interface IFeePercentageService
     {

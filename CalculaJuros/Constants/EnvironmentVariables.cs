@@ -1,4 +1,4 @@
-namespace CalulaJuros.Constants
+namespace CalculaJuros.Constants
 {
     public class EnvironmentVariables
     {

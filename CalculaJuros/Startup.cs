@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CalulaJuros.Domain.Services;
-using CalulaJuros.Domain.Usecases;
-using CalulaJuros.Services;
-using CalulaJuros.Usecases;
+using CalculaJuros.Domain.Services;
+using CalculaJuros.Domain.Usecases;
+using CalculaJuros.Services;
+using CalculaJuros.Usecases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,7 +16,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace CalulaJuros
+namespace CalculaJuros
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace CalulaJuros
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CalulaJuros", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CalculaJuros", Version = "v1" });
             });
 
             InjectDependencies(services);
@@ -50,7 +50,7 @@ namespace CalulaJuros
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CalulaJuros v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CalculaJuros v1"));
             }
 
             app.UseHttpsRedirection();

@@ -1,11 +1,11 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using CalulaJuros.Constants;
-using CalulaJuros.Domain.Exceptions;
-using CalulaJuros.Domain.Services;
+using CalculaJuros.Constants;
+using CalculaJuros.Domain.Exceptions;
+using CalculaJuros.Domain.Services;
 
-namespace CalulaJuros.Services
+namespace CalculaJuros.Services
 {
     public class FeePercentageService : IFeePercentageService
     {

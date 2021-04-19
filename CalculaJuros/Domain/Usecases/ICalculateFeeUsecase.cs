@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace CalulaJuros.Domain.Usecases
+namespace CalculaJuros.Domain.Usecases
 {
     public interface ICalculateFeeUsecase
     {

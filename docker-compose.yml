@@ -12,11 +12,11 @@ services:
         env_file:
             - .env
 
-    calulajuros:
-        image: calulajuros
+    calculajuros:
+        image: calculajuros
         build:
             context: .
-            dockerfile: CalulaJuros/Dockerfile
+            dockerfile: CalculaJuros/Dockerfile
         ports:
             - 5000:5000
             - 5001:5001

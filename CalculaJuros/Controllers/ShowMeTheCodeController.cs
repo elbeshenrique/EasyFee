@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace CalulaJuros.Controllers
+namespace CalculaJuros.Controllers
 {
     [Route("showmethecode")]
     [ApiController]
