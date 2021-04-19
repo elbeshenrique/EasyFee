@@ -1,16 +1,16 @@
 using System;
 using System.Threading.Tasks;
 using CalulaJuros.Domain.Exceptions;
+using CalulaJuros.Domain.Services;
 using CalulaJuros.Domain.Usecases;
-using CalulaJuros.Services;
 
 namespace CalulaJuros.Usecases
 {
     public class CalculateCompositeFeeUsecase : ICalculateFeeUsecase
     {
-        private readonly FeePercentageService taxaJurosService;
+        private readonly IFeePercentageService taxaJurosService;
 
-        public CalculateCompositeFeeUsecase(FeePercentageService taxaJurosService)
+        public CalculateCompositeFeeUsecase(IFeePercentageService taxaJurosService)
         {
             this.taxaJurosService = taxaJurosService;
         }

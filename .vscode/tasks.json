@@ -5,7 +5,7 @@
             "command": "dotnet",
             "type": "process",
             "args": [
-                "build-taxajuros",
+                "build",
                 "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
@@ -43,10 +43,6 @@
                 "ports": [{
                         "hostPort": 6000,
                         "containerPort": 6000
-                    },
-                    {
-                        "hostPort": 6001,
-                        "containerPort": 6001
                     }
                 ]
             },
@@ -64,7 +60,7 @@
             "command": "dotnet",
             "type": "process",
             "args": [
-                "build-calculajuros",
+                "build",
                 "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
@@ -94,11 +90,58 @@
             "dependsOn": [
                 "docker-build-calculajuros: debug"
             ],
-            "dockerRun": {},
+            "dockerRun": {
+                "envFiles": [
+                    ".env"
+                ],
+                "network": "jurosfacil_default",
+                "ports": [{
+                        "hostPort": 5000,
+                        "containerPort": 5000
+                    }
+                ]
+            },
             "netCore": {
                 "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
                 "enableDebugging": true
             }
+        },
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }

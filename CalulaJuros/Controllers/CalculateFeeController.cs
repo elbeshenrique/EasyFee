@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using CalulaJuros.Domain.Usecases;
-using CalulaJuros.Usecases;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CalulaJuros.Controllers
@@ -21,7 +16,7 @@ namespace CalulaJuros.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<decimal>> CalculaJuros(decimal valorInicial, int tempo)
+        public async Task<ActionResult<decimal>> Get(decimal valorInicial, int tempo)
         {
             try
             {

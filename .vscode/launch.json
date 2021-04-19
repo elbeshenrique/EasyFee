@@ -2,10 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch CalculaJuros",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/CalulaJuros/bin/Debug/net5.0/CalulaJuros.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/CalulaJuros",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
             "name": "Docker TaxaJuros",
             "type": "docker",
             "request": "launch",
-            "preLaunchTask": "docker-run: debug",
+            "preLaunchTask": "docker-run-taxajuros: debug",
             "netCore": {
                 "appProject": "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj"
             }
@@ -14,7 +30,7 @@
             "name": "Docker CalculaJuros",
             "type": "docker",
             "request": "launch",
-            "preLaunchTask": "docker-run: debug",
+            "preLaunchTask": "docker-run-calculajuros: debug",
             "netCore": {
                 "appProject": "${workspaceFolder}/CalulaJuros/CalulaJuros.csproj"
             }
