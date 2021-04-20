@@ -1,7 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using CalculaJuros.Constants;
+using CalculaJuros.Application.Drivers;
 using CalculaJuros.Domain.Exceptions;
 using CalculaJuros.Domain.Services;
 
@@ -9,22 +9,22 @@ namespace CalculaJuros.Services
 {
     public class FeePercentageService : IFeePercentageService
     {
-        private const string UrlEndpointFormat = "http://{0}:6000/taxaJuros";
-        
+        public const string UrlEndpointFormat = "http://{0}:6000/taxaJuros";
+
+        private readonly IHttpHandler httpHandler;
         private readonly string urlEndpoint;
 
-        public FeePercentageService() {
-            var hostIp = Environment.GetEnvironmentVariable(EnvironmentVariables.HostIp);
-            urlEndpoint = String.Format(UrlEndpointFormat, hostIp);
+        public FeePercentageService(IHttpHandler httpHandler, string urlEndpoint)
+        {
+            this.urlEndpoint = urlEndpoint;
+            this.httpHandler = httpHandler;
         }
 
         public async Task<decimal> GetFeePercentage()
         {
             try
             {
-                var client = new HttpClient();
-                var response = await client.GetAsync(urlEndpoint);
-                var rawValue = await response.Content.ReadAsStringAsync();
+                var rawValue = await httpHandler.GetAsyncAsString(urlEndpoint);
                 var feePercentage = Convert.ToDecimal(rawValue);
                 return feePercentage;
             }

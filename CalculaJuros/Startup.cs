@@ -1,19 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net.Http;
+using CalculaJuros.Application.Drivers;
+using CalculaJuros.Constants;
 using CalculaJuros.Domain.Services;
 using CalculaJuros.Domain.Usecases;
 using CalculaJuros.Services;
 using CalculaJuros.Usecases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace CalculaJuros
@@ -41,7 +38,16 @@ namespace CalculaJuros
         private static void InjectDependencies(IServiceCollection services)
         {
             services.AddTransient<ICalculateFeeUsecase, CalculateCompositeFeeUsecase>();
-            services.AddTransient<IFeePercentageService, FeePercentageService>();
+            services.AddTransient<HttpClient>();
+            services.AddTransient<IHttpHandler, Application.Drivers.HttpClientHandler>();
+
+            services.AddTransient<IFeePercentageService>(serviceProvider =>
+            {
+                var hostIp = Environment.GetEnvironmentVariable(EnvironmentVariables.HostIp);
+                var urlEndpoint = String.Format(FeePercentageService.UrlEndpointFormat, hostIp);
+                var httpHandler = serviceProvider.GetService<IHttpHandler>();
+                return new FeePercentageService(httpHandler, urlEndpoint);
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

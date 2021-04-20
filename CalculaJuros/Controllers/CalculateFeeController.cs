@@ -16,11 +16,11 @@ namespace CalculaJuros.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<decimal>> Get(decimal valorInicial, int tempo)
+        public async Task<ActionResult<decimal>> Get(decimal valorInicial, int meses)
         {
             try
             {
-                var finalValue = await calculateFeeUsecase.Execute(valorInicial, tempo);
+                var finalValue = await calculateFeeUsecase.Execute(valorInicial, meses);
                 return Ok(finalValue);
             }
             catch
