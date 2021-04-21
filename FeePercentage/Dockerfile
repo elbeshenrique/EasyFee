@@ -20,7 +20,6 @@ RUN dotnet build "FeePercentage.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "FeePercentage.csproj" -c Release -o /app/publish
-RUN dotnet dev-certs https --trust
 
 FROM base AS final
 WORKDIR /app

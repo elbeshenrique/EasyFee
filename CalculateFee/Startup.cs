@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using CalculateFee.Application.Drivers;
+using CalculateFee.Application.Usecases;
 using CalculateFee.Constants;
 using CalculateFee.Domain.Services;
 using CalculateFee.Domain.Usecases;
@@ -38,6 +39,8 @@ namespace CalculateFee
         private static void InjectDependencies(IServiceCollection services)
         {
             services.AddTransient<ICalculateFeeUsecase, CalculateCompositeFeeUsecase>();
+            services.AddTransient<IGetRepositoryUrlUsecase, GetGithubRepositoryUrlUsecase>();
+            
             services.AddTransient<HttpClient>();
             services.AddTransient<IHttpHandler, Application.Drivers.HttpClientHandler>();
 

@@ -12,6 +12,11 @@ services:
         env_file:
             - .env
 
+    feepercentage-test:
+        build:
+            context: .
+            dockerfile: FeePercentage.Tests/Dockerfile
+
     calculatefee:
         image: calculatefee
         build:
@@ -24,3 +29,10 @@ services:
             - .env
         depends_on:
             - feepercentage
+
+    calculatefee-test:
+        build:
+            context: .
+            dockerfile: CalculateFee.Tests/Dockerfile
+        env_file: 
+            - .env.tests

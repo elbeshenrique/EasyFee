@@ -1,3 +1,4 @@
+using CalculateFee.Domain.Usecases;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CalculateFee.Controllers
@@ -6,12 +7,25 @@ namespace CalculateFee.Controllers
     [ApiController]
     public class ShowMeTheCodeController : ControllerBase
     {
-        private const string GitHubRepositoryUrl = "https://github.com/elbeshenrique/EasyFee";
+        private readonly IGetRepositoryUrlUsecase getRepositoryUrlUsecase;
+
+        public ShowMeTheCodeController(IGetRepositoryUrlUsecase getRepositoryUrlUsecase)
+        {
+            this.getRepositoryUrlUsecase = getRepositoryUrlUsecase;
+        }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(GitHubRepositoryUrl);
+            try
+            {
+                var repositoryUrl = getRepositoryUrlUsecase.Execute();
+                return Ok(repositoryUrl);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

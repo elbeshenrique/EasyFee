@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FeePercentage.Application.Usecases;
+using FeePercentage.Domain.Usecases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,13 @@ namespace FeePercentage
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FeePercentage", Version = "v1" });
             });
+
+            InjectDependencies(services);
+        }
+
+        private void InjectDependencies(IServiceCollection services)
+        {
+            services.AddTransient<IGetFeePercentageUsecase, GetCompositeFeePercentageUsecase>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
