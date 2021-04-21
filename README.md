@@ -22,7 +22,7 @@ e.g. <br/>
 
 <br />
 
-**Note:** both APIs has a Swagger UI that can be accessed using the `/swagger` endpoint.
+**Important Note:** both APIs are configured to use only **HTTP** (not **HTTPS**) and they serve a Swagger UI that can be accessed using the `/swagger` endpoint.
 
 ### Commands
 
