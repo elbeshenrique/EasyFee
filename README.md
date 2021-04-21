@@ -4,6 +4,8 @@
 
 You will need **Docker 20.10.5** or greater and **docker-compose** installed.
 
+You will also need **Make GNU** installed.
+
 Install **Docker** [documentation](https://docs.docker.com/get-docker/).
 
 Install **docker-compose** [documentation](https://docs.docker.com/compose/install/).
