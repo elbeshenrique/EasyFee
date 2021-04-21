@@ -6,7 +6,7 @@ using CalculaJuros.Usecases;
 using Moq;
 using Xunit;
 
-namespace CalculaJuros.Tests.Application.Usecases
+namespace CalculaJuros.Tests.Unit.Application.Usecases
 {
     public class CalculateCompositeFeeUsecaseTest
     {
@@ -23,7 +23,7 @@ namespace CalculaJuros.Tests.Application.Usecases
         [InlineData(1000, 48, 0.01, 1612.22)]
         [InlineData(-1000, 48, 0.01, -1612.22)]
         [InlineData(1000, 1024, 0.01, 26612566.11)]
-        [InlineData(-1000, 1024, 0.01, -26612566.11)]    
+        [InlineData(-1000, 1024, 0.01, -26612566.11)]
         public async Task Execute_Should_Return_Correct_Value_When_Given_Correct_Values(decimal initialValue, int months, decimal mockedFee, decimal expected)
         {
             var feePercentageServiceMock = new Mock<IFeePercentageService>();

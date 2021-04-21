@@ -6,7 +6,7 @@ using CalculaJuros.Services;
 using Moq;
 using Xunit;
 
-namespace CalculaJuros.Tests.Application.Services
+namespace CalculaJuros.Tests.Unit.Application.Services
 {
     public class FeePercentageServiceTest
     {
