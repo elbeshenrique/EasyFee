@@ -21,3 +21,7 @@ down:
 
 logs:
 	docker-compose logs -f
+
+test:
+	make feepercentage-up
+	docker-compose up test
