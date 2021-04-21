@@ -1,2 +1,7 @@
 {
+    "csharp.unitTestDebuggingOptions": {
+        "env": {
+            "HOST_IP": "172.17.0.1",
+        }
+    }
 }
