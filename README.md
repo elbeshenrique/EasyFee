@@ -20,6 +20,10 @@ e.g. <br/>
 
 **Windows (WSL2):** you can use the value `host.docker.internal` on the env variable.
 
+<br />
+
+**Note:** both APIs has a Swagger UI that can be accessed using the `/swagger` endpoint.
+
 ### Commands
 
 - Run applications on ports 5000 (CalculateFee) and 7000 (FeePercentage):
@@ -52,6 +56,7 @@ Port [5000](http://localhost:5000/calculajuros?valorInicial=100&meses=5).
 
 |       API       |                         Endpoint                          | Method |           Description            | Parameters                                                                                                                                |
 | :-------------: | :-------------------------------------------------------: | :----: | :------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| `FeePercentage and CalculateFee` |                       `/swagger`                        | `GET`  |       `Access the Swagger UI`       |                                                                                                                                           |
 | `FeePercentage` |                       `/taxaJuros`                        | `GET`  |       `Get fee percentage`       |                                                                                                                                           |
 | `CalculateFee`  | `/calculajuros?valorInicial={valorInicial}&meses={meses}` | `GET`  |    `Get fee value calculated`    | **valorInicial (decimal)**:<br/>`base value to calculate the fee;`<br/> **meses (integer)**:<br/> `months quantity to calculate the fee.` |
 | `CalculateFee`  |                     `/showmethecode`                      | `GET`  | `Get this GitHub repository URL` |                                                                                                                                           |
