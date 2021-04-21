@@ -35,6 +35,6 @@ Port [5000](http://localhost:5000/calculajuros?valorInicial=100&meses=5).
 
 | API | Endpoint | Method | Description | Parameters |
 | :----------------: | :----------------: | :-------------------: | :-------------------: | :------------------- |
-| `FeePercentage` | `/taxajuros` | `GET` | `Get fee percentage` | |
+| `FeePercentage` | `/taxaJuros` | `GET` | `Get fee percentage` | |
 | `CalculateFee` | `/calculajuros?valorInicial={valorInicial}&meses={meses}` | `GET` | `Get fee value calculated` | **valorInicial (decimal)**:<br/>`base value to calculate the fee;`<br/> **meses (integer)**:<br/> `months quantity to calculate the fee.`|
 | `CalculateFee` | `/showmethecode` | `GET` | `Get this GitHub repository URL` | |

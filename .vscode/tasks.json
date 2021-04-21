@@ -1,6 +1,7 @@
 {
     "version": "2.0.0",
-    "tasks": [{
+    "tasks": [
+        {
             "label": "build-feepercentage",
             "command": "dotnet",
             "type": "process",
@@ -40,9 +41,14 @@
                     ".env"
                 ],
                 "network": "easyfee_default",
-                "ports": [{
+                "ports": [
+                    {
                         "hostPort": 7000,
                         "containerPort": 5000
+                    },
+                    {
+                        "hostPort": 7001,
+                        "containerPort": 5001
                     }
                 ]
             },
@@ -52,9 +58,6 @@
                 "configureSsl": true
             }
         },
-
-
-
         {
             "label": "build-calculatefee",
             "command": "dotnet",
@@ -95,15 +98,21 @@
                     ".env"
                 ],
                 "network": "easyfee_default",
-                "ports": [{
+                "ports": [
+                    {
                         "hostPort": 5000,
                         "containerPort": 5000
+                    },
+                    {
+                        "hostPort": 5001,
+                        "containerPort": 5001
                     }
                 ]
             },
             "netCore": {
                 "appProject": "${workspaceFolder}/CalculateFee/CalculateFee.csproj",
-                "enableDebugging": true
+                "enableDebugging": true,
+                "configureSsl": true
             }
         },
         {

@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 5000
 EXPOSE 5001
 
-ENV ASPNETCORE_URLS=http://+:5000
+ENV ASPNETCORE_URLS=https://+:5001;http://+:5000
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-dotnet-configure-containers
@@ -20,6 +20,7 @@ RUN dotnet build "FeePercentage.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "FeePercentage.csproj" -c Release -o /app/publish
+RUN dotnet dev-certs https --trust
 
 FROM base AS final
 WORKDIR /app
