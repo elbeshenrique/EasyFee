@@ -9,7 +9,7 @@ namespace CalculateFee.Services
 {
     public class FeePercentageService : IFeePercentageService
     {
-        public const string UrlEndpointFormat = "http://{0}:6000/taxaJuros";
+        public const string UrlEndpointFormat = "http://{0}:7000/taxaJuros";
 
         private readonly IHttpHandler httpHandler;
         private readonly string urlEndpoint;
