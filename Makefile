@@ -1,11 +1,20 @@
-taxajuros-up:
-	docker-compose up -d taxajuros
+feepercentage-up:
+	docker-compose up -d feepercentage
 
-taxajuros-down:
-	docker-compose stop taxajuros
+feepercentage-down:
+	docker-compose stop feepercentage
 
-calculajuros-up:
-	docker-compose up -d calculajuros
+calculatefee-up:
+	docker-compose up -d calculatefee
 
-calculajuros-down:
-	docker-compose stop calculajuros
+calculatefee-down:
+	docker-compose stop calculatefee
+
+up:
+	docker-compose up -d
+
+down:
+	docker-compose down --remove-orphans
+
+logs:
+	docker-compose logs -f
