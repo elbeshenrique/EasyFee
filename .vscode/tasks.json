@@ -41,8 +41,8 @@
                 ],
                 "network": "easyfee_default",
                 "ports": [{
-                        "hostPort": 6000,
-                        "containerPort": 6000
+                        "hostPort": 7000,
+                        "containerPort": 5000
                     }
                 ]
             },

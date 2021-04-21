@@ -10,7 +10,7 @@ Install **docker-compose** [documentation](https://docs.docker.com/compose/insta
 
 ### Commands
 
-- Run applications on ports 5000 (CalculateFee) and 6000 (FeePercentage):
+- Run applications on ports 5000 (CalculateFee) and 7000 (FeePercentage):
 ```shell
 make up
 ```
@@ -28,7 +28,7 @@ make down
 ### APIs Endpoints
 
 **FeePercentage:** API responsible for returning the fee percentage.<br />
-Port [6000](http://localhost:6000/taxajuros).
+Port [7000](http://localhost:7000/taxajuros).
 
 **CalculateFee:** API responsible for calculating the fee value based on FeePercentage API data.<br />
 Port [5000](http://localhost:5000/showmethecode).

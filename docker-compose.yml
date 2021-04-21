@@ -7,7 +7,7 @@ services:
             context: .
             dockerfile: FeePercentage/Dockerfile
         ports:
-            - 6000:5000
+            - 7000:5000
         env_file:
             - .env
 
