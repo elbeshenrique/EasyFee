@@ -1,12 +1,12 @@
 {
     "version": "2.0.0",
     "tasks": [{
-            "label": "build-taxajuros",
+            "label": "build-feepercentage",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj",
+                "${workspaceFolder}/FeePercentage/FeePercentage.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -14,32 +14,32 @@
         },
         {
             "type": "docker-build",
-            "label": "docker-build-taxajuros: debug",
+            "label": "docker-build-feepercentage: debug",
             "dependsOn": [
-                "build-taxajuros"
+                "build-feepercentage"
             ],
             "dockerBuild": {
-                "tag": "jurosfacil-taxajuros:dev",
+                "tag": "easyfee-feepercentage:dev",
                 "target": "base",
-                "dockerfile": "${workspaceFolder}/TaxaJuros/Dockerfile",
+                "dockerfile": "${workspaceFolder}/FeePercentage/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj"
+                "appProject": "${workspaceFolder}/FeePercentage/FeePercentage.csproj"
             }
         },
         {
             "type": "docker-run",
-            "label": "docker-run-taxajuros: debug",
+            "label": "docker-run-feepercentage: debug",
             "dependsOn": [
-                "docker-build-taxajuros: debug"
+                "docker-build-feepercentage: debug"
             ],
             "dockerRun": {
                 "envFiles": [
                     ".env"
                 ],
-                "network": "jurosfacil_default",
+                "network": "easyfee_default",
                 "ports": [{
                         "hostPort": 6000,
                         "containerPort": 6000
@@ -47,7 +47,7 @@
                 ]
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj",
+                "appProject": "${workspaceFolder}/FeePercentage/FeePercentage.csproj",
                 "enableDebugging": true,
                 "configureSsl": true
             }
@@ -56,12 +56,12 @@
 
 
         {
-            "label": "build-calculajuros",
+            "label": "build-calculatefee",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
+                "${workspaceFolder}/CalculateFee/CalculateFee.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -69,32 +69,32 @@
         },
         {
             "type": "docker-build",
-            "label": "docker-build-calculajuros: debug",
+            "label": "docker-build-calculatefee: debug",
             "dependsOn": [
-                "build-calculajuros"
+                "build-calculatefee"
             ],
             "dockerBuild": {
-                "tag": "jurosfacil-calculajuros:dev",
+                "tag": "easyfee-calculatefee:dev",
                 "target": "base",
-                "dockerfile": "${workspaceFolder}/CalculaJuros/Dockerfile",
+                "dockerfile": "${workspaceFolder}/CalculateFee/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj"
+                "appProject": "${workspaceFolder}/CalculateFee/CalculateFee.csproj"
             }
         },
         {
             "type": "docker-run",
-            "label": "docker-run-calculajuros: debug",
+            "label": "docker-run-calculatefee: debug",
             "dependsOn": [
-                "docker-build-calculajuros: debug"
+                "docker-build-calculatefee: debug"
             ],
             "dockerRun": {
                 "envFiles": [
                     ".env"
                 ],
-                "network": "jurosfacil_default",
+                "network": "easyfee_default",
                 "ports": [{
                         "hostPort": 5000,
                         "containerPort": 5000
@@ -102,7 +102,7 @@
                 ]
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
+                "appProject": "${workspaceFolder}/CalculateFee/CalculateFee.csproj",
                 "enableDebugging": true
             }
         },
@@ -112,7 +112,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
+                "${workspaceFolder}/CalculateFee/CalculateFee.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -124,7 +124,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
+                "${workspaceFolder}/CalculateFee/CalculateFee.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -137,7 +137,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj",
+                "${workspaceFolder}/CalculateFee/CalculateFee.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

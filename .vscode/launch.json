@@ -2,13 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch CalculaJuros",
+            "name": "Launch CalculateFee",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/CalculaJuros/bin/Debug/net5.0/CalculaJuros.dll",
+            "program": "${workspaceFolder}/CalculateFee/bin/Debug/net5.0/CalculateFee.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/CalculaJuros",
+            "cwd": "${workspaceFolder}/CalculateFee",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
@@ -18,21 +18,21 @@
             }
         },
         {
-            "name": "Docker TaxaJuros",
+            "name": "Docker FeePercentage",
             "type": "docker",
             "request": "launch",
-            "preLaunchTask": "docker-run-taxajuros: debug",
+            "preLaunchTask": "docker-run-feepercentage: debug",
             "netCore": {
-                "appProject": "${workspaceFolder}/TaxaJuros/TaxaJuros.csproj"
+                "appProject": "${workspaceFolder}/FeePercentage/FeePercentage.csproj"
             }
         },
         {
-            "name": "Docker CalculaJuros",
+            "name": "Docker CalculateFee",
             "type": "docker",
             "request": "launch",
-            "preLaunchTask": "docker-run-calculajuros: debug",
+            "preLaunchTask": "docker-run-calculatefee: debug",
             "netCore": {
-                "appProject": "${workspaceFolder}/CalculaJuros/CalculaJuros.csproj"
+                "appProject": "${workspaceFolder}/CalculateFee/CalculateFee.csproj"
             }
         }
     ]
