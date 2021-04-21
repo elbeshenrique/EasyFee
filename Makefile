@@ -10,6 +10,9 @@ calculatefee-up:
 calculatefee-down:
 	docker-compose stop calculatefee
 
+build:
+	docker-compose build
+
 up:
 	docker-compose up -d
 
